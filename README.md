@@ -1,6 +1,6 @@
 # ToyCOM-simulation
 
-*작성: 컴퓨터공학과 황진성(eddy5360@naver.com)*  
+*작성: 컴퓨터공학과 1723940 황진성(eddy5360@naver.com)*  
 
 *목적: CPU의 작동 방식을 이해해보기 위함.*  
 
