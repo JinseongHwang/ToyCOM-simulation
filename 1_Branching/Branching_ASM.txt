@@ -5,12 +5,12 @@
 ; Report #1
 
 ; ### Application Flow
-; initialize A=13; B=16; C=1;
-; create subroutine function from addr:300
-; call subroutine
-; A=21;
-; call subroutine
-; HALT
+; 1. initialize A=13; B=16; C=1;
+; 2. create subroutine function from addr:300
+; 3. call subroutine
+; 4. A=21;
+; 5. call subroutine
+; 6. HALT
 
 0000:	fE 81	; 10000 001 1111 1110	BR PC(200h) = PC + 1FE (offset = 200h - 2h = 1FEh)
 
