@@ -2,7 +2,7 @@
 
 typedef signed char T;
 
-T subroutine(T height, T from, T tmp, T to) {
+void subroutine(T height, T from, T tmp, T to) {
 	if (height == 1) {
 		printf("%c -> %c\n", from, to);
 	}
