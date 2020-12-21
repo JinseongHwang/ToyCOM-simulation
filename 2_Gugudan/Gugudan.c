@@ -2,31 +2,47 @@
 
 typedef signed char T;
 
-T subroutine_1() {
-	T sum = 0;
-	for (T i = 1; i <= 10; i++) {
-		sum += i;
+void mul(T* multiplier, T* multiplicand, T* result) {
+	T R6 = 0; // tmp_iterator
+	T R7 = *multiplicand; // tmp_max
+	for (; R6 < R7; R6++) {
+		*result += *multiplier;
 	}
-	return sum;
+}
+
+void subroutine_1(T* sum, T* iterator, T* max) {
+	for (; *iterator <= *max; (*iterator)++) {
+		*sum += *iterator;
+	}
 }
 
 void subroutine_2(T* front, T* back, T* max, T* result) {
-	for (; *front <= *max; (*front)++) {
-		for (*back = 1; *back <= *max; (*back)++) {
-			*result = (*front) * (*back);
+	while (*front < *max) {
+		(*front)++;
+		*back = 0;
+		while (*back < *max) {
+			(*back)++;
+			mul(front, back, result);
 			printf("%d * %d = %d\n", *front, *back, *result);
+			*result = 0;
 		}
 	}
 }
 
 int main() {
 
-	T R1 = subroutine_1();
+	T R1 = 0; // sum
+	T R2 = 1; // iterator
+	T R3 = 10; // max
 
-	T R2 = 2;
-	T R3 = 1;
-	T R4 = 9;
-	T R5 = 0;
+	subroutine_1(&R1, &R2, &R3);
+	printf("%d\n", R1); // expected output: 55
+
+	R2 = 1; // front
+	R3 = 0; // back
+	T R4 = 9; // max
+	T R5 = 0; // result
+	
 	subroutine_2(&R2, &R3, &R4, &R5);
 
 	return 0;
