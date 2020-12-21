@@ -11,7 +11,8 @@ void mul(T* multiplier, T* multiplicand, T* result) {
 }
 
 void subroutine_1(T* sum, T* iterator, T* max) {
-	for (; *iterator <= *max; (*iterator)++) {
+	while (*iterator < *max) {
+		(*iterator)++;
 		*sum += *iterator;
 	}
 }
@@ -32,7 +33,7 @@ void subroutine_2(T* front, T* back, T* max, T* result) {
 int main() {
 
 	T R1 = 0; // sum
-	T R2 = 1; // iterator
+	T R2 = 0; // iterator
 	T R3 = 10; // max
 
 	subroutine_1(&R1, &R2, &R3);
